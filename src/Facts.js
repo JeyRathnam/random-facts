@@ -5,6 +5,7 @@ export default function Facts() {
     const [isLoading, setIsLoading] = useState(true);
 
     async function fetchUrl () {
+        setIsLoading(true);
         const response = await fetch('https://uselessfacts.jsph.pl/random.json?language=en');
         const json = await response.json();
         setData(json);
